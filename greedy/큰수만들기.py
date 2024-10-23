@@ -1,4 +1,5 @@
 def solution(number, k):
+    # comment
     result=[]
     index = 0
     for i in range(len(number)-k):
