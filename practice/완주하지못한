@@ -1,0 +1,8 @@
+def solution(participant, completion):
+    answer = ''
+    for person in completion:
+        if person in participant:
+            participant.remove(person)
+        else:
+            continue
+    return ''.join(participant)
