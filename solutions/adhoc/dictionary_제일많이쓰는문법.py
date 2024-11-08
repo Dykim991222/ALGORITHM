@@ -14,3 +14,12 @@ for connection in connections:
         connect_dict[connection[1]].append(connection[0])
 
 print(connect_dict)
+
+for k, v in connect_dict.items():
+    print(k, v)
+
+for k in connect_dict.keys():
+    print(k)
+    
+for v in connect_dict.values():
+    print(v)

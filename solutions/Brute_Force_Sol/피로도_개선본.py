@@ -22,6 +22,8 @@ def solution(k, dungeons):
             if current_k >= int(dungeon[0]):
                 current_k -= int(dungeon[1])
                 cnt += 1
+            else:
+                break
         if cnt > max_cnt:
             max_cnt = cnt
     
