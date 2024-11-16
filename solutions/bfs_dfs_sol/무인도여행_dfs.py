@@ -4,7 +4,7 @@ def dfs(r, c, visited, maps):
     global R, C
     dr = [1, -1, 0, 0]
     dc = [0, 0, 1, -1]
-    cnt += int(maps[r][c])
+    cnt = int(maps[r][c])
     
     # return
     
@@ -20,8 +20,8 @@ def dfs(r, c, visited, maps):
             continue
 
         visited[nr][nc] = 1
-        dfs(nr, nc, visited, maps)
-
+        cnt += dfs(nr, nc, visited, maps)
+    return cnt
 
 def solution(maps):
     global R, C
@@ -36,9 +36,8 @@ def solution(maps):
             if point == "X" or visited[r][c] == 1:
                 continue
             else:
-                cnt = 0
                 visited[r][c] = 1
-                dfs(r, c, visited, maps)
+                cnt = dfs(r, c, visited, maps)
                 answer.append(cnt)
                 
 
