@@ -1,7 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 N, M = map(int, input().split())
 numlist = list(map(int, input().split()))
 
-start, end = min(numlist), max(numlist)
+
+result = 0
+start, end = 0, max(numlist)
 
 while start <= end:
     mid = (start + end)//2
@@ -11,10 +16,10 @@ while start <= end:
         if numlist[i] > mid:
             check += (numlist[i] - mid)
 
-    if check == M:
-        print(mid)
-        break
-    if check > M:
+    if check >= M:
+        result = mid
         start = mid + 1
-    if check < M:
+    else:
         end = mid - 1
+
+print(result)
