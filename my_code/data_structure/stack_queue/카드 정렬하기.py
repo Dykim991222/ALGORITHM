@@ -8,6 +8,7 @@ for _ in range(N):
     x = int(input())
     numbers.append(x)
 
+
 h = []
 for value in numbers:
     heapq.heappush(h, value)
