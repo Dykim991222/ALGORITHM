@@ -12,8 +12,8 @@ for _ in range(n):
 #start = 1, end = -1
 
 second_list = []
-for i in range(n):
-    second_list.append((first_list[0], 1, i))
-    second_list.append((first_list[1], -1, i))
+for i in first_list:
+    second_list.append((i[0], 1, i))
+    second_list.append((i[1], -1, i))
 
 print(second_list)
