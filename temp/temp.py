@@ -1,5 +1,8 @@
 import time
+import sys
+sys.setrecursionlimit(10**9)
 
+# RecursionError
 
 def add(a, b):
     return a + b
