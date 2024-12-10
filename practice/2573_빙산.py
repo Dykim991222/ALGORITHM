@@ -41,7 +41,7 @@ def check_zero(r, c, board):
         nr = r + dr[i]
         nc = c + dc[i]
 
-        if nr < 0 or nc < 0 or nr >= r or nc >= c:
+        if nr < 0 or nc < 0 or nr >= len(board) or nc >= len(board[0]):
             continue
 
         if board[nr][nc] == 0:
