@@ -46,7 +46,7 @@ def check_zero(r, c, board):
 
         if board[nr][nc] == 0:
             melt += 1
-    
+
     return max(0, board[r][c] - melt)
 
 def after_year(r, c, board):
