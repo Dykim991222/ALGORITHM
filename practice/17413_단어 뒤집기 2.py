@@ -2,18 +2,30 @@ import sys
 input = sys.stdin.readline
 
 sentence = list(input().rstrip())
-print(sentence)
-
-
-S = list(map(str, input().split()))
-
 answer = []
 reverse1 = ''
-for i in range(len(S)):
-    word = S[i]
-    for k in range(len(word)-1,-1,-1):
-        reverse1 += word[k]
-    answer.append(reverse1)
-    reverse1 = ''
+inside_tag = False
 
-print(answer)
+for char in sentence:
+    if char == '<':
+        if reverse1:
+            answer.append(reverse1[::-1])
+            reverse1 = ''
+        inside_tag = True
+        answer.append(char)
+    elif char == '>':
+        inside_tag = False
+        answer.append(char)
+    elif inside_tag:
+        answer.append(char)
+    elif char == ' ':
+        answer.append(reverse1[::-1])
+        answer.append(char)
+        reverse1 = ''
+    else:
+        reverse1 += char
+
+if reverse1:
+    answer.append(reverse1[::-1])
+
+print(''.join(answer))
