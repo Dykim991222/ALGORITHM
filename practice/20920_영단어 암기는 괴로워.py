@@ -19,13 +19,3 @@ for word in words:
     else:
         count[word] += 1
 
-keys_list = list(count.keys())
-values_list = list(count.values())
-
-total = []
-
-for i in range(len(keys_list)):
-    total.append([keys_list[i], values_list[i]])
-
-total[1].sort()
-print(total)
