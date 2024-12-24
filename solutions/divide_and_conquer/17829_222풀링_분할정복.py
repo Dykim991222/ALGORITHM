@@ -1,0 +1,24 @@
+import sys
+
+sys.setrecursionlimit(10**6)
+n = int(input())
+nums = []
+for i in range(n):
+    tmp = list(map(int, input().split()))
+    nums.append(tmp)
+
+
+def pooling(size, x, y):
+    mid = size // 2
+    if size == 1:
+        return nums[x][y]
+    lt = pooling(mid, x, y)
+    rt = pooling(mid, x + mid, y)
+    lb = pooling(mid, x, y + mid)
+    rb = pooling(mid, x + mid, y + mid)
+    answer = [lt, rt, lb, rb]
+    answer.sort()
+    return answer[-2]
+
+
+print(pooling(n, 0, 0))
